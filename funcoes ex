@@ -173,7 +173,7 @@ int main(){
 
 int menu(int x, int y, int z);
 int aritmetica(int a, int b, int c);
-int ponderada(int d, int e, int f);
+int ponderada(int a, int b, int c);
 int nota1, nota2, nota3;  
 printf("Digite 3 notas: ");
 scanf("%i%i%i", &nota1, &nota2, &nota3);
@@ -217,9 +217,9 @@ float media = (a+b+c) / 3.0;
 return media;
 }
 
-int ponderada(int d, int e, int f){
+int ponderada(int a, int b, int c){
 
-int media = ((d*0.5) + (e*0.3) + (f*0.2) / 3;
+int media = (a * 5 + b * 3 + c * 2) / (5+3+2);
 return media;
 }
 
