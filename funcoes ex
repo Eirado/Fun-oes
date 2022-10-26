@@ -1,0 +1,226 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#define PI 3
+#include <ctype.h>
+// Funçoes
+
+/*1) Escreva uma função que receba por parâmetro dois números e retorne o maior deles.
+
+int achaMaior(int x, int y){
+if(x > y)
+    printf("o maior eh %i", x);
+else    
+    printf("o maior eh %i", y);
+}
+
+int main(){
+
+int achaMaior();
+int n1,n2;
+
+printf("Digite 2 valores para saber o maior: ");
+scanf("%i%i", &n1, &n2);
+
+achaMaior(n1,n2);
+}
+2) Faça uma função que receba um número inteiro de 1 a 12 e imprima em tela o mês e a sua quantidade de dias de acordo com o número digitado pelo usuário.
+Exemplo: Entrada = 4. Saída = abril.
+
+int acharMes(int i){
+
+
+switch (i)
+{
+case 1:
+        printf("Janeiro.");
+    break;
+case 2:
+        printf("Fevereiro.");
+    break;
+case 3:
+        printf("Março.");
+    break;
+case 4:
+        printf("Abril.");
+    break;
+case 5:
+        printf("Maio.");
+    break;
+case 6:
+        printf("Junho.");
+    break;
+case 7:
+        printf("Julho.");
+    break;
+case 8:
+        printf("Agosto.");
+    break;
+case 9:
+        printf("Setembro.");
+    break;
+case 10:
+        printf("Outubro.");
+    break;
+case 11:
+        printf("Novembro.");
+    break;
+case 12:
+        printf("Dezembro.");
+    break;
+default:
+        printf("Valor invalido");
+    break;
+}
+}
+int main(){
+int num;
+int acharMes(int i);
+
+printf("Digite um numero e saiba o mes: ");
+scanf("%i", &num);
+
+acharMes(num);
+}
+3) Escreva uma função que receba por parâmetro uma temperatura em graus Fahrenheit e a retorne convertida em graus Celsius.
+ A fórmula de conversão é: C = (F – 32.0) * (5.0/9.0), sendo F a temperatura em Fahrenheit e C a temperatura em Celsius.
+
+float conversao(float f){
+
+float C = (f - 32.0) * (5.0/9.0);
+return C;
+}
+
+int main(){
+
+float F;
+printf("Digite os valores em Fahrenheit e saiba em Celsius: ");   
+scanf("%f", &F);
+
+printf("%f\n", conversao(F));
+return 0;
+}
+4) Escreva uma função que receba por parâmetro a altura e o raio de um cilindro circular e retorne o volume desse cilindro.
+ O volume de um cilindro circular é calculado por meio da seguinte fórmula:
+
+
+float retornaVolume(float x, float y){
+
+float v = PI * pow(x,2) * y;
+return v;
+}
+
+int main(){
+
+float r, h;
+float retornaVolume(float x, float y);
+
+printf("Digite o raio e a altura de um cilindro e saiba seu volume: ");
+scanf("%f%f", &r, &h);
+
+printf("O volume eh %f",retornaVolume(r, h));
+}
+6) Escreva uma função que receba o peso (quilos) e a altura (metros) de uma pessoa. Calcule e retorne o IMC (Índice de Massa Corporal) dessa pessoa: 
+
+
+int main(){
+
+float peso, altura;
+float calcularIMC(float x, float y);
+
+printf("Digite seu peso e altura e saiba seu IMC: ");
+scanf("%f%f", &peso, &altura);
+printf("%f", calcularIMC(peso, altura));
+}
+
+float calcularIMC(float x, float y){
+float IMC = x / pow(y,2);
+return IMC;    
+}
+7) Elabore uma função que receba três números inteiros como parâmetro, representando horas, minutos e segundos. A função deve retornar esse horário convertido em segundos.
+
+int main(){
+
+int h, m, s, resultado;
+int coverteSegundos(int x, int y, int z);
+
+printf("Digite um horario para ser covertido para segundos: ");
+scanf("%i:%i:%i", &h, &m, &s);
+resultado = coverteSegundos(h,m,s);
+printf("O total em segundos eh %i", resultado);
+}
+int coverteSegundos(int x, int y, int z){
+
+int total;
+total = (x * 360);
+total += (y * 60);
+total += z;
+return total;
+}
+8) Elabore uma função para verificar se um número é um quadrado perfeito.
+Um quadrado perfeito é um número inteiro não negativo que pode ser expresso como o quadrado de outro número inteiro. Exemplos: 1, 4, 9.
+
+int main(){
+}
+9) Elabore uma função que receba três notas de um aluno como parâmetros e uma letra.
+   Se a letra for “A”, a função deverá calcular a média aritmética das notas do aluno; se for “P”, deverá calcular a média ponderada, com pesos 5, 3 e 2.
+   Retorne a média calculada para o programa principal.*/
+
+
+
+int main(){
+
+int menu(int x, int y, int z);
+int aritmetica(int a, int b, int c);
+int ponderada(int d, int e, int f);
+int nota1, nota2, nota3;  
+printf("Digite 3 notas: ");
+scanf("%i%i%i", &nota1, &nota2, &nota3);
+menu(nota1, nota2, nota3);
+
+}
+
+int menu(int x, int y, int z){
+char i;
+
+
+printf("Escolha uma das opcoes: ");
+printf("\n(A) Para calcular a media aritmetica\n(P) Para calcular a media ponderada\n(0) Para sair do programa");
+printf("\nEscolha: ");
+setbuf(stdin,NULL);
+scanf("%c", &i);
+i = toupper(i);
+
+
+switch (i)
+{
+case 'A':
+   
+    printf("%i", aritmetica(x,y,z));
+    break;
+case 'P':
+    printf("%i", ponderada(x,y,z));
+    break;
+case '0':
+    printf("FIM");
+    break;
+default:
+    printf("Valor invalido");
+    break;
+}
+}
+int aritmetica(int a, int b, int c){
+
+
+float media = (a+b+c) / 3.0;
+return media;
+}
+
+int ponderada(int d, int e, int f){
+
+int media = ((d*0.5) + (e*0.3) + (f*0.2) / 3;
+return media;
+}
+
+
